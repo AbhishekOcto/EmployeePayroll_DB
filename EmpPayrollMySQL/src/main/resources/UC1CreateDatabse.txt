@@ -1,0 +1,18 @@
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| address_book_service |
+| information_schema   |
+| learn                |
+| mysql                |
+| payroll_service      |
+| performance_schema   |
+| smapledatabase2      |
+| sys                  |
++----------------------+
+8 rows in set (0.06 sec)
+
+mysql> use payroll_service;
+Database changed
+mysql>
