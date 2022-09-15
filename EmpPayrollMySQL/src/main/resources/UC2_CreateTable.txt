@@ -1,0 +1,21 @@
+mysql> use payroll_service;
+Database changed
+mysql> create table employee_payroll(
+    -> id int auto_increment primary key,
+    -> name varchar(150) not null,
+    -> salary int(15) not null,
+    -> startdata int not null);
+Query OK, 0 rows affected, 1 warning (0.18 sec)
+
+mysql> desc employee_payroll;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int          | NO   | PRI | NULL    | auto_increment |
+| name      | varchar(150) | NO   |     | NULL    |                |
+| salary    | int          | NO   |     | NULL    |                |
+| startdata | int          | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.06 sec)
+
+mysql>
