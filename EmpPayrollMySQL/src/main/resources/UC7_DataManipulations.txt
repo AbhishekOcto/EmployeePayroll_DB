@@ -1,0 +1,52 @@
+mysql> select * from employee_payroll;
++----+---------+--------+--------+------------+
+| id | name    | gender | salary | start      |
++----+---------+--------+--------+------------+
+|  1 | Swayam  | M      |  35000 | 2022-08-15 |
+|  2 | Prakash | M      |  30000 | 2021-09-21 |
+|  3 | Shivam  | M      |  45000 | 2019-09-25 |
+|  4 | Rahul   | M      |  41000 | 2018-07-01 |
++----+---------+--------+--------+------------+
+4 rows in set (0.05 sec)
+
+mysql> select AVG(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| AVG(salary) |
++-------------+
+|       37750 |
++-------------+
+1 row in set (0.02 sec)
+
+mysql> select Sum(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| Sum(salary) |
++-------------+
+|      151000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> select Max(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| Max(salary) |
++-------------+
+|       45000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> select Min(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| Min(salary) |
++-------------+
+|       30000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select Count(salary) from employee_payroll where gender = 'M' group by gender;
++---------------+
+| Count(salary) |
++---------------+
+|             4 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql>
