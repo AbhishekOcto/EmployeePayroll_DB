@@ -1,0 +1,48 @@
+mysql> desc employee_payroll;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int          | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(150) | NO   |     | NULL    |                |
+| salary | double       | NO   |     | NULL    |                |
+| start  | date         | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into employee_payroll( name, salary, start) values
+    -> ( 'Swayam', 35000.00, '2022-08-15'),
+    -> ( 'Prakash', 30000.00, '2021-09-21'),
+    -> ( 'Shivam', 45000.00, '2019-09-25'),
+    -> ( 'Rahul', 41000.00, '2018-07-01');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+---------+--------+------------+
+| id | name    | salary | start      |
++----+---------+--------+------------+
+|  1 | Swayam  |  35000 | 2022-08-15 |
+|  2 | Prakash |  30000 | 2021-09-21 |
+|  3 | Shivam  |  45000 | 2019-09-25 |
+|  4 | Rahul   |  41000 | 2018-07-01 |
++----+---------+--------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select salary from employee_payroll where name = 'Shivam';
++--------+
+| salary |
++--------+
+|  45000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_payroll
+    -> where start between cast('2022-01-01' as date) and date(now());
++----+--------+--------+------------+
+| id | name   | salary | start      |
++----+--------+--------+------------+
+|  1 | Swayam |  35000 | 2022-08-15 |
++----+--------+--------+------------+
+1 row in set (0.08 sec)
+
+mysql>
